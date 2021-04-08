@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. env/bin/activate
+
+# Add Path
+PATH="${PWD}/env/bin:${PATH}"
+
+# KERAS_BACKEND
+export KERAS_BACKEND=plaidml.keras.backend
