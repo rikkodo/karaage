@@ -1,9 +1,19 @@
 #!/bin/bash
 
+DIR=$(dirname $0)
+OWD=${PWD}
+
+pushd ${DIR} > /dev/null
+
 . env/bin/activate
 
 # Add Path
-PATH="${PWD}/env/bin:${PATH}"
+# PATH="${PWD}/env/bin:${PATH}"
 
 # KERAS_BACKEND
 export KERAS_BACKEND=plaidml.keras.backend
+
+if [ ${OWD} != ${PWD} ] ;
+then
+    popd > /dev/null
+fi
